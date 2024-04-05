@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.container {
+    display: flex;
+}
+
+.nav_container {
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.list_item {
+    float: left;
+    background-color: red;
+    color: white;
+    padding: 16px 14px;
+    margin: 6px;
+    width: 400px;
+    text-align: center;
+}
+
+.dropdown:hover .dropdown_container {
+    display: block;
+}
+
+.dropdown_container {
+    display: none;
+}
