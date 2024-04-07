@@ -1,27 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: 'Kanit', sans-serif;
 }
 
 .container {
     display: flex;
+    flex-direction: column;
 }
 
 .nav_container {
     width: 100%;
-    background-color: aquamarine;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: black;
 }
 
 .list_item {
     float: left;
-    background-color: red;
     color: white;
-    padding: 16px 14px;
     margin: 6px;
     width: 400px;
     text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+.link {
+    padding: 14px;
+}
+
+.dropdown_container{
+    position: absolute;
+    width: 800px;
+    box-shadow: 0 10px 20px black;
+    background-color: white;
+}
+
+.dropdown_container a {
+    display: block;
+    padding: 14px;
+    color: black;
+}
+
+.list_item:hover {
+    background-color: white;
+    color: black;
+}
+
+.dropdown_btn, .dropdown_container {
+    display: inline-block;
+    padding: 14px;
 }
 
 .dropdown:hover .dropdown_container {
