@@ -2,7 +2,14 @@
 
 let container = document.querySelector('.container');
 
-const getCards = async () => {
+let cardContainer = document.querySelector('.card_container');
+
+let deckId;
+
+const generateId = () => {
+}
+
+const newDeck = async () => {
     try{
         let card = await fetch("https://www.deckofcardsapi.com/api/deck/new/draw/?count=2");
         let cardData = await card.json();
@@ -13,10 +20,12 @@ const getCards = async () => {
         cardImage.src = cardData.cards[0].image;
         console.log(cardData.cards[0].image)
 
-        container.appendChild(cardImage);
+        deckId = cardData.deck_id;
+
+        cardContainer.appendChild(cardImage);
     } catch(error) {
         alert(error);
     }   
 }
 
-getCards();
+newDeck();
