@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --burgandy: #780000;
-    --crimson: #c1121f;
     --cream: #fdf0d5;
     --dark-blue: #003049;
     --light-blue: #669bbc;
+    --fairy-blue: #bde0fe;
 }
 
 * {
@@ -22,12 +21,14 @@
     height: 100vh;
 }
 
+/* <------------------ NAVBAR ------------------> */
 .nav_container {
     width: 100%;
     font-size: 20px;
     font-weight: 800;
     background-color: var(--cream);
     border: 2px solid black;
+    z-index: 100;
 }
 
 .list_item {
@@ -56,30 +57,60 @@
     padding: 14px;
 }
 
-.list_item:hover {
-    background-color: white;
-    color: black;
-}
-
 .dropdown_btn, .dropdown_container {
     display: inline-block;
     padding: 14px;
 }
 
 .dropdown:hover .dropdown_container {
+    background-color: var(--fairy-blue);
     display: block;
+}
+.list_item:hover {
+    background-color: var(--fairy-blue);
 }
 
 .dropdown_container {
     display: none;
 }
 
+/* <------------------ CREATE DECK ------------------> */
+.create_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(150px);
+}
+
+.create_deck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-blue);
+    color: white;
+    border: 2px solid black;
+    height: 40px;
+    width: 200px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.create_deck:hover {
+    transform: scale(1.1);
+    transition: transform 1s ease;
+}
+
+
+/* <------------------ CARD CONTAINER ------------------> */
 .card_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
-    flex: 1;
+    width: 300px;
+    height: auto;
+    transform: translateY(300px);
 }
 
 .card_container:hover {
