@@ -5,6 +5,7 @@ let container = document.querySelector('.container');
 let cardContainer = document.querySelector('.card_container');
 
 let createBtn = document.querySelector('.create_deck');
+let newCardBtn = document.querySelector('.draw_card');
 
 let deckId;
 
@@ -28,7 +29,7 @@ const newDeck = async (id) => {
 
         addImage(cardData);
     } catch(error) {
-        alert(error);
+        console.log(error);
     }   
 }
 
@@ -45,9 +46,28 @@ const addImage = (cardData) => {
 
 createBtn.addEventListener('click', async () => {
     let existingImage = container.querySelector('img')
-    existingImage.remove();
+
+    if(existingImage != null) {
+        existingImage.remove();
+    }
+    
 
     newDeck('new');
+})
+
+newCardBtn.addEventListener('click', async () => {
+    
+    try {
+        let card = await fetch(`https://www.deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
+        let cardData = await card.json();
+
+        console.log(cardData);
+
+        addImage(cardData);
+    } catch (error) {
+        alert(error);
+    }
+    
 })
 
 onStart();
